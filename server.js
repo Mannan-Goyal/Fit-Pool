@@ -39,8 +39,12 @@ db.mongoose
 
 // simple route
 app.get("/", (req, res) => {
-  res.sendFile('index.html' , { root : __dirname});
+  res.sendFile('public/index.html' , { root : __dirname});
 });
+
+app.get("/register", (req,res) => {
+  res.sendFile('public/register.html', { root : __dirname})
+})
 
 // routes
 require('./app/routes/auth.routes')(app);
