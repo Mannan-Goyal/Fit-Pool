@@ -47,8 +47,11 @@ app.get("/register", (req,res) => {
 })
 
 app.get("/dashboard", (req,res) => {
-  console.log(req.query.email)
   res.sendFile('public/dashboard.html', { root : __dirname})
+})
+
+app.get("/invites", (req,res) => {
+  res.sendFile('public/invites.html', { root : __dirname})
 })
 
 // routes

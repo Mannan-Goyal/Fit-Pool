@@ -20,14 +20,21 @@
     <!-- Webpage Title -->
     <title>FitPool</title>
     
+    <style>
+        #registration {
+            margin-top: 0;
+        }
+    </style>
+
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/all.css" rel="stylesheet">
+    <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/swiper.css" rel="stylesheet">
 	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css">
+	<link href="css/styles.css" rel="stylesheet">
 	
 	<!-- Favicon  -->
     <link rel="icon" href="https://www.flaticon.com/svg/vstatic/svg/2446/2446353.svg?token=exp=1615805484~hmac=0d902900f8a2b5f90cce2024e0da235d">
@@ -54,13 +61,10 @@
                         <a class="nav-link page-scroll" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="index.html#registration">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="register.html">Register</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link page-scroll" href="dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="invites.html">Invites</a>
                     </li>
                 </ul>
                 <span class="nav-item social-icons">
@@ -81,88 +85,47 @@
         </div> <!-- end of container -->
     </nav> <!-- end of navbar -->
     <!-- end of navigation -->
-
-
-    <!-- Header -->
-    <header id="header" class="header">
+    <div class="greet">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h1 class="h1-large"><span class="blue">FitPool</span> Your Fitness buddy!</h1>
-                        <p class="p-large">Use this app to save money and take your first step towards a fit and healthy life! Life is YOLO!</p>
-                        <a class="btn-solid-lg page-scroll" href="#registration">Start your Journey</a>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of div -->
-                <div class="col-lg-6">
-                    <div class="image-container">
-                        <img class="img-fluid" src="images/teamwork.png" alt="alternative">
-                    </div> <!-- end of image-container -->
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of header -->
-    <!-- end of header -->
-
-    <!-- Registration -->
-    <div id="registration" class="form-1">
+            <h3>
+                Hello < User >,
+            </h3>
+            <h5>Find you ideal pool partner!</h5>
+            <p>Following people wanna get fit with you!</p>
+        </div>
+    </div>
+    <br>
+    <div class="people">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="text-container">
-                        <h2>Login</h2>
-                        <p>FitPool is one of the easiest and feature filled fitness collaboration tool. Discover it now!</p>
-                        <ul class="list-unstyled li-space-lg">
-                            <li class="media">
-                                <i class="fas fa-check"></i><div class="media-body">Pool expensive Gym Memberships!</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i><div class="media-body">Save money whilst meeting like minded people!</div>
-                            </li>
-                            <li class="media">
-                                <i class="fas fa-check"></i><div class="media-body">Convince them to buy your company's products</div>
-                            </li>
-                        </ul>
-                    </div> <!-- end of text-container -->
-                </div> <!-- end of col -->
-                <div class="col-lg-6">
-
-                    <!-- Registration Form -->
-                    <div class="form-container">
-                        <form id="requestForm" action="/api/auth/signin" method="POST">
-                            <div class="form-group">
-                                <input type="email" class="form-control-input" id="remail" name="remail" required>
-                                <label class="label-control" for="remail">Email</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control-input" id="rphone" name="rphone" required>
-                                <label class="label-control" for="rphone">Password</label>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group checkbox">
-                                <input type="checkbox" id="rterms" value="Agreed-to-Terms" name="rterms" required>I agree with FitPool's stated <a href="privacy-policy.html">Privacy Policy</a> and <a href="terms-conditions.html">Terms & Conditions</a>
-                                <div class="help-block with-errors"></div>
-                            </div>
-                            <div class="form-group">
-                                <p class="small">Click here to <a href="/register">Register</a></p>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control-submit-button">Login</button>
-                            </div>
-                            <div class="form-message">
-                                <div id="rmsgSubmit" class="h3 text-center hidden"></div>
-                            </div>
-                        </form>
-                    </div> <!-- end of form-container -->
-                    <!-- end of registration form -->
-
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of form-1 -->
-    <!-- end of registration -->
-
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Days</th>
+                    <th scope="col">Hobbies</th>
+                    <th scope="col">Accept Invites</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark Otto</td>
+                    <td>Mon,Thu,Sat</td>
+                    <td>Football, Movies</td>
+                    <td><button type="submit" class="form-control-submit-button prop"><strong>✓</strong></button></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob Thornton</td>
+                    <td>Wed</td>
+                    <td>Drumming, Coding</td>
+                    <td><button type="submit" class="form-control-submit-button prop"><strong>✓</strong></button></td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
     <!-- Footer -->
     <div class="footer">
         <div class="container">
