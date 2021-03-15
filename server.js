@@ -4,6 +4,8 @@ const cors = require("cors");
 
 const app = express();
 
+app.set("view engine","ejs");
+
 var corsOptions = {
   origin: "http://localhost:3000"
 };
@@ -47,11 +49,17 @@ app.get("/register", (req,res) => {
 })
 
 app.get("/dashboard", (req,res) => {
-  res.sendFile('public/dashboard.html', { root : __dirname})
+  const name = {
+    email: req.query.email
+}
+  res.render('dashboard', name);
 })
 
 app.get("/invites", (req,res) => {
-  res.sendFile('public/invites.html', { root : __dirname})
+  const name = {
+    email: req.query.email
+}
+  res.render('invites', name)
 })
 
 // routes
