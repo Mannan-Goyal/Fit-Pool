@@ -7,10 +7,11 @@ var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
+  console.log(req.body)
   const user = new User({
-    username: req.body.username,
+    username: req.body.name,
     email: req.body.email,
-    password: bcrypt.hashSync(req.body.password, 8)
+    password: bcrypt.hashSync(req.body.pwd, 8)
   });
 
   user.save((err, user) => {
@@ -55,7 +56,7 @@ exports.signup = (req, res) => {
             return;
           }
 
-          res.send({ message: "User was registered successfully!" });
+          res.redirect("/");
         });
       });
     }
