@@ -16,7 +16,7 @@ app.use(bodyParser.json());
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public'))
 
 const db = require("./app/models");
 const dbConfig = require("./app/config/db.config");
@@ -44,6 +44,11 @@ app.get("/", (req, res) => {
 
 app.get("/register", (req,res) => {
   res.sendFile('public/register.html', { root : __dirname})
+})
+
+app.get("/dashboard", (req,res) => {
+  console.log(req.query.email)
+  res.sendFile('public/dashboard.html', { root : __dirname})
 })
 
 // routes
