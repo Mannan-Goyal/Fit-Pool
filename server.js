@@ -50,6 +50,10 @@ app.get("/dashboard", (req,res) => {
   res.sendFile('public/dashboard.html', { root : __dirname})
 })
 
+app.get("/invites", (req,res) => {
+  res.sendFile('public/invites.html', { root : __dirname})
+})
+
 // routes
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
